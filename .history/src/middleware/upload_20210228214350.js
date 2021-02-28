@@ -17,7 +17,7 @@ let storage = multer.diskStorage({
     let fileNameSplited = file.originalname.split(".");
     let extension = fileNameSplited[fileNameSplited.length - 1];
     cb(null, fileName_2 + "." + extension);
-    console.log(fileName_2 + "." + extension);
+    console.log(fileName_2 + extension);
   },
 });
 

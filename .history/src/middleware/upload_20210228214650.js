@@ -1,12 +1,13 @@
 const util = require("util");
 const multer = require("multer");
 const maxSize = 2 * 1024 * 1024;
-let fileName_2;
 
 let fileName = (fileName) => {
-  fileName_2 = fileName;
+  // fileName_2 = fileName;
+  return fileName;
   console.log(fileName_2);
 };
+const fileName_2 = fileName;
 
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -17,7 +18,7 @@ let storage = multer.diskStorage({
     let fileNameSplited = file.originalname.split(".");
     let extension = fileNameSplited[fileNameSplited.length - 1];
     cb(null, fileName_2 + "." + extension);
-    console.log(fileName_2 + "." + extension);
+    console.log(fileName_2 + extension);
   },
 });
 

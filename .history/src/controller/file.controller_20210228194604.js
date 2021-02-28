@@ -1,9 +1,9 @@
-const uploadFile = require("../middleware/upload").uploadFileMiddleware;
-const FileName = require("../middleware/upload").fileName;
+const uploadFile = require("../middleware/upload");
+
 const upload = async (req, res) => {
   try {
     await uploadFile(req, res);
-    FileName(req.body.id);
+
     if (req.file == undefined) {
       return res.status(400).send({ message: "Please upload a file!" });
     }
@@ -13,8 +13,7 @@ const upload = async (req, res) => {
     });
   } catch (err) {
     console.log("catch Statment");
-    console.log(err);
-    console.log(req.body.file);
+    console.log(req.file);
 
     res.status(500).send({
       message: `Could not upload the file: ${req.file.originalname}. ${err}`,
