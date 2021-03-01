@@ -13,6 +13,7 @@ app.use(cors(corsOptions));
 const initRoutes = require("./src/routes");
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
 initRoutes(app);
 
 const port = process.env.PORT || 3000;
