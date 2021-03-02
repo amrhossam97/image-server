@@ -5,7 +5,7 @@ const app = express();
 global.__basedir = __dirname;
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  // origin: "http://localhost:8081"
 };
 
 app.use(cors(corsOptions));
@@ -13,7 +13,7 @@ app.use(cors(corsOptions));
 const initRoutes = require("./src/routes");
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json())
+app.use(express.json());
 initRoutes(app);
 
 const port = process.env.PORT || 3000;
