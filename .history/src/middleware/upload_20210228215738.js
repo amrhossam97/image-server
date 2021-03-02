@@ -4,7 +4,7 @@ const maxSize = 2 * 1024 * 1024;
 let fileName_2;
 
 let fileName = (id) => {
-  fileName_2 = id;
+  this.fileName_2 = id;
   console.log(id);
 };
 
@@ -13,13 +13,11 @@ let storage = multer.diskStorage({
     cb(null, __basedir + "/resources/static/assets/uploads/");
   },
   filename: (req, file, cb) => {
-    setTimeout;
     console.log(file.originalname);
     let fileNameSplited = file.originalname.split(".");
     let extension = fileNameSplited[fileNameSplited.length - 1];
-
-    cb(null, fileName_2 + "." + extension);
-    console.log(fileName_2 + "." + extension);
+    cb(null, this.fileName_2 + "." + extension);
+    console.log(this.fileName_2 + "." + extension);
   },
 });
 

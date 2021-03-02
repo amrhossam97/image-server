@@ -13,11 +13,9 @@ let storage = multer.diskStorage({
     cb(null, __basedir + "/resources/static/assets/uploads/");
   },
   filename: (req, file, cb) => {
-    setTimeout;
     console.log(file.originalname);
     let fileNameSplited = file.originalname.split(".");
     let extension = fileNameSplited[fileNameSplited.length - 1];
-
     cb(null, fileName_2 + "." + extension);
     console.log(fileName_2 + "." + extension);
   },
