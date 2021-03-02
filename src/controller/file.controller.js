@@ -52,8 +52,13 @@ const download = (req, res) => {
   });
 };
 
+const Home = (req, res) => {
+  res.status(200).send("<h3>Server Is working .... </h3>");
+};
+
 module.exports = {
   upload,
   getListFiles,
   download,
+  Home,
 };

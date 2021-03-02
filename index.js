@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 const initRoutes = require("./src/routes");
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json())
+app.use(express.json());
 initRoutes(app);
 
 const port = process.env.PORT || 3000;
