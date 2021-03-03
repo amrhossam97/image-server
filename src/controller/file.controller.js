@@ -5,9 +5,9 @@ const upload = async (req, res) => {
     if (req.file == undefined) {
       return res.status(400).send({ message: "Please upload a file!" });
     }
-    let fileNameSplited = file.originalname.split(".");
+    let fileNameSplited = req.file.originalname.split(".");
     let extension = fileNameSplited[fileNameSplited.length - 1];
-    res.status(200).send('https://iti-upload.herokuapp.com/files/'+ req.params.id + "." + extension);
+    res.status(200).send(`https://iti-upload.herokuapp.com/files/${req.params.id}.${extension}`);
   } catch (err) {
     res.status(500).send({
       message: `Could not upload the file: ${req.file.originalname}. ${err}`,
