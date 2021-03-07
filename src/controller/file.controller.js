@@ -59,7 +59,6 @@ const Home = (req, res) => {
 
 module.exports = {
   upload,
-
   download,
   Home,
 };
