@@ -11,6 +11,7 @@ const upload = async (req, res) => {
       link: `https://iti-upload.herokuapp.com/files/${req.params.id}.${extension}`,
     });
   } catch (err) {
+    console.log(req.file)
     res.status(500).send({
       message: `Could not upload the file: ${req.file.originalname}. ${err}`,
     });
