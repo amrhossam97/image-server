@@ -57,7 +57,7 @@ const Home = (req, res) => {
 
 module.exports = {
   upload,
-  getListFiles,
+  /* getListFiles, */
   download,
   Home,
 };
