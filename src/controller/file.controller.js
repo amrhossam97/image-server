@@ -7,7 +7,9 @@ const upload = async (req, res) => {
     }
     let fileNameSplited = req.file.originalname.split(".");
     let extension = fileNameSplited[fileNameSplited.length - 1];
-    res.status(200).send({link:`https://iti-upload.herokuapp.com/files/${req.params.id}.${extension}`});
+    res.status(200).send({
+      link: `https://iti-upload.herokuapp.com/files/${req.params.id}.${extension}`,
+    });
   } catch (err) {
     res.status(500).send({
       message: `Could not upload the file: ${req.file.originalname}. ${err}`,
@@ -57,7 +59,7 @@ const Home = (req, res) => {
 
 module.exports = {
   upload,
-  getListFiles,
+
   download,
   Home,
 };
